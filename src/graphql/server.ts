@@ -1,11 +1,11 @@
 import {ApolloServer} from 'apollo-server'
 import typeDefs from './typedefs'
 import resolvers from './resolvers'
-import cors from 'cors'
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  cors:true
 })
 
 export const connect = async () =>{

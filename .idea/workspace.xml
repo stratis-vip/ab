@@ -23,17 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57e2e36-85ce-40f6-b0f6-28131dbfbd83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/resolvers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/resolvers/strings.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/typedefs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -70,6 +61,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/graphql" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -81,8 +73,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606403015252</updated>
-      <workItem from="1606403016739" duration="5158000" />
+      <workItem from="1606403016739" duration="5461000" />
     </task>
+    <task id="LOCAL-00001" summary="first attemp">
+      <created>1606409403422</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606409403422</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +101,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="first attemp" />
+    <option name="LAST_COMMIT_MESSAGE" value="first attemp" />
   </component>
   <component name="WindowStateProjectService">
     <state x="367" y="127" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606403848844">
@@ -131,6 +133,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606403225698" />
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606409406193">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606409406193" />
     <state x="568" y="224" width="670" height="676" key="search.everywhere.popup" timestamp="1606405962962">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
