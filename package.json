@@ -2,9 +2,13 @@
   "name": "ab",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js -r @babel/register",
+    "start1": "node src/app.js",
+    "build": "npx babel src --out-dir lib",
+    "transpile": "babel ./src --out-dir ./dist"
   },
   "repository": {
     "type": "git",
@@ -16,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/stratis-vip/ab/issues"
   },
-  "homepage": "https://github.com/stratis-vip/ab#readme"
+  "homepage": "https://github.com/stratis-vip/ab#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "apollo-server": "^2.19.0",
+    "cors": "^2.8.5",
+    "graphql": "^15.4.0"
+  }
 }
