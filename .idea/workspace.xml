@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57e2e36-85ce-40f6-b0f6-28131dbfbd83" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/graphql/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606403015252</updated>
-      <workItem from="1606403016739" duration="5461000" />
+      <workItem from="1606403016739" duration="5585000" />
     </task>
     <task id="LOCAL-00001" summary="first attemp">
       <created>1606409403422</created>
@@ -82,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606409403422</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first attemp">
+      <created>1606409657796</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606409657796</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,10 +140,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606403225698" />
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606409406193">
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606409659250">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606409406193" />
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606409659250" />
     <state x="568" y="224" width="670" height="676" key="search.everywhere.popup" timestamp="1606405962962">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
