@@ -9,6 +9,7 @@ export const db = new Sequelize(process.env.DBASE!,process.env.DBUSER!, process.
   dialectOptions: {
     timezone: "Europe/Athens",
   },
+  // logging: () => console.log,
   logging: false,
   define:{
     charset: 'utf8'

@@ -44,5 +44,13 @@ exports.tokenMdl = index_1.db.define('token', {
     indexes: [{ unique: true, fields: ['userId'] }],
     charset: 'utf8'
 });
-exports.userMdl.hasOne(exports.tokenMdl);
-exports.tokenMdl.belongsTo(exports.userMdl);
+exports.userMdl.hasOne(exports.tokenMdl, {
+    foreignKey: {
+        allowNull: false
+    }
+});
+exports.tokenMdl.belongsTo(exports.userMdl, {
+    foreignKey: {
+        allowNull: false
+    }
+});

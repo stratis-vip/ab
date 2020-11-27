@@ -11,13 +11,13 @@ export default gql`
     
     type Token {
         id:ID!
-        userId:User!
+        user:User!
         token:String!
     }
     
     type Mutation{
         createUser(newUser:inUser!):User!
-        createToken(userId:ID!, token:String!):Token!
+        createToken(user:ID!, token:String!):Token!
         hiq:String!
     }
     enum Role{

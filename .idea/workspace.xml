@@ -23,21 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57e2e36-85ce-40f6-b0f6-28131dbfbd83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/graphql/resolvers/tokens.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/resolvers/tokens.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/db/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/tokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/tokens.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/graphql/typedefs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/typedefs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/graphql.schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/tokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/tokens.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphql/typedefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/typedefs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/graphql/resolvers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -119,7 +119,7 @@
       <updated>1606403015252</updated>
       <workItem from="1606403016739" duration="7326000" />
       <workItem from="1606444044983" duration="3910000" />
-      <workItem from="1606454135903" duration="7073000" />
+      <workItem from="1606454135903" duration="14933000" />
     </task>
     <task id="LOCAL-00001" summary="first attemp">
       <created>1606409403422</created>
@@ -184,19 +184,18 @@
       <option name="project" value="LOCAL" />
       <updated>1606470170649</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="create tokenTable complete">
+      <created>1606472758519</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606472758519</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/snapshotSerializers/astSerializer.js" />
-        <option value="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/snapshotSerializers/graphQLTypeSerializer.js" />
-        <option value="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/snapshotSerializers/selectionSetSerializer.js" />
-        <option value="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/buildSchemaFromSDL.test.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -217,7 +216,8 @@
     <MESSAGE value="node" />
     <MESSAGE value="createUser works" />
     <MESSAGE value="create tokenTable" />
-    <option name="LAST_COMMIT_MESSAGE" value="create tokenTable" />
+    <MESSAGE value="create tokenTable complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="create tokenTable complete" />
   </component>
   <component name="WindowStateProjectService">
     <state x="367" y="127" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606403848844">
@@ -232,6 +232,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="591" y="208" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.877@0.23.1440.877" timestamp="1606454060677" />
+    <state x="691" y="227" key="FileChooserDialogImpl" timestamp="1606478055424">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="691" y="227" key="FileChooserDialogImpl/0.23.1440.877@0.23.1440.877" timestamp="1606478055424" />
     <state width="1051" height="201" key="GridCell.Tab.0.bottom" timestamp="1606458609565">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -252,18 +256,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="404" y="104" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1606458592617" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1606472208055">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1606474357143">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606472208055" />
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606470173051">
+    <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606474357143" />
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606472762705">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606470173051" />
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606472762705" />
     <state x="664" y="206" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606470185603">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="664" y="206" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.23.1440.877@0.23.1440.877" timestamp="1606470185603" />
+    <state x="601" y="220" width="604" height="490" key="find.popup" timestamp="1606478063198">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="601" y="220" width="604" height="490" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1606478063198" />
     <state x="568" y="224" width="670" height="676" key="search.everywhere.popup" timestamp="1606470834838">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

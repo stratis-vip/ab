@@ -44,5 +44,13 @@ export const tokenMdl = db.define('token', {
   charset: 'utf8'
 })
 
-userMdl.hasOne(tokenMdl)
-tokenMdl.belongsTo(userMdl)
+userMdl.hasOne(tokenMdl,{
+  foreignKey: {
+    allowNull: false
+  }
+})
+tokenMdl.belongsTo(userMdl,{
+  foreignKey:{
+    allowNull:false
+  }
+})

@@ -25,12 +25,13 @@ export type Scalars = {
 export type Query = {
   __typename?: 'Query';
   hi: Scalars['String'];
+  getUsers: Array<Maybe<User>>;
 };
 
 export type Token = {
   __typename?: 'Token';
   id: Scalars['ID'];
-  userId: User;
+  user: User;
   token: Scalars['String'];
 };
 
@@ -198,11 +199,12 @@ export interface DateOnlyScalarConfig extends GraphQLScalarTypeConfig<ResolversT
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   hi?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  getUsers?: Resolver<Array<Maybe<ResolversTypes['User']>>, ParentType, ContextType>;
 };
 
 export type TokenResolvers<ContextType = any, ParentType extends ResolversParentTypes['Token'] = ResolversParentTypes['Token']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  userId?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
   token?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
