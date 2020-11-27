@@ -1,9 +1,11 @@
-import {InUser} from '../../types'
+import {InUser, Token} from '../../types'
 import {UserInputError} from 'apollo-server'
 import {userMdl} from "../../db/models";
 
 export const users ={
-
+  Query:{
+    getUsers: () =>  userMdl.findAll()
+  },
   Mutation:{
     createUser: async (_:any, args:{newUser:InUser} )=> {
       try {
@@ -13,5 +15,6 @@ export const users ={
         throw new UserInputError(error.message, error)
       }
     }
-  }
+  },
+
 }

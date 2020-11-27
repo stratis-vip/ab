@@ -14,4 +14,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var strings_1 = require("./strings");
 var scalars_1 = require("./scalars");
 var users_1 = require("../../graphql/resolvers/users");
-exports.default = __assign({ Query: __assign({}, strings_1.strings.Query), Mutation: __assign({}, users_1.users.Mutation) }, scalars_1.scalars);
+var tokens_1 = require("./tokens");
+exports.default = __assign(__assign({ Query: __assign(__assign({}, strings_1.strings.Query), users_1.users.Query), Mutation: __assign(__assign({}, users_1.users.Mutation), tokens_1.tokens.Mutation) }, tokens_1.tokens.Others), scalars_1.scalars);

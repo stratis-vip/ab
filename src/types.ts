@@ -12,7 +12,9 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  /** Τύπος ημερομηνίας που κρατά την ημερομηνία σε μορφή YYYY-MM-DD HH:MM:SS */
   Date: any;
+  /** Τύπος ημερομηνίας που κρατά την ημερομηνία σε μορφή YYYY-MM-DD */
   DateOnly: any;
   /** The `Upload` scalar type represents a file upload. */
   Upload: any;
@@ -25,15 +27,29 @@ export type Query = {
   hi: Scalars['String'];
 };
 
+export type Token = {
+  __typename?: 'Token';
+  id: Scalars['ID'];
+  userId: User;
+  token: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
-  hiq: Scalars['String'];
   createUser: User;
+  createToken: Token;
+  hiq: Scalars['String'];
 };
 
 
 export type MutationCreateUserArgs = {
   newUser: InUser;
+};
+
+
+export type MutationCreateTokenArgs = {
+  userId: Scalars['ID'];
+  token: Scalars['String'];
 };
 
 export enum Role {
@@ -146,11 +162,12 @@ export type ResolversTypes = {
   DateOnly: ResolverTypeWrapper<Scalars['DateOnly']>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Token: ResolverTypeWrapper<Token>;
+  ID: ResolverTypeWrapper<Scalars['ID']>;
   Mutation: ResolverTypeWrapper<{}>;
   Role: Role;
   inUser: InUser;
   User: ResolverTypeWrapper<User>;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
   CacheControlScope: CacheControlScope;
   Upload: ResolverTypeWrapper<Scalars['Upload']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
@@ -162,10 +179,11 @@ export type ResolversParentTypes = {
   DateOnly: Scalars['DateOnly'];
   Query: {};
   String: Scalars['String'];
+  Token: Token;
+  ID: Scalars['ID'];
   Mutation: {};
   inUser: InUser;
   User: User;
-  ID: Scalars['ID'];
   Upload: Scalars['Upload'];
   Boolean: Scalars['Boolean'];
 };
@@ -182,9 +200,17 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   hi?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 };
 
+export type TokenResolvers<ContextType = any, ParentType extends ResolversParentTypes['Token'] = ResolversParentTypes['Token']> = {
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  userId?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+  token?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  hiq?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   createUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationCreateUserArgs, 'newUser'>>;
+  createToken?: Resolver<ResolversTypes['Token'], ParentType, ContextType, RequireFields<MutationCreateTokenArgs, 'userId' | 'token'>>;
+  hiq?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 };
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
@@ -204,6 +230,7 @@ export type Resolvers<ContextType = any> = {
   Date?: GraphQLScalarType;
   DateOnly?: GraphQLScalarType;
   Query?: QueryResolvers<ContextType>;
+  Token?: TokenResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
   Upload?: GraphQLScalarType;

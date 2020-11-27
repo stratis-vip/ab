@@ -51,6 +51,9 @@ exports.users = void 0;
 var apollo_server_1 = require("apollo-server");
 var models_1 = require("../../db/models");
 exports.users = {
+    Query: {
+        getUsers: function () { return models_1.userMdl.findAll(); }
+    },
     Mutation: {
         createUser: function (_, args) { return __awaiter(void 0, void 0, void 0, function () {
             var user, error_1;
@@ -69,5 +72,5 @@ exports.users = {
                 }
             });
         }); }
-    }
+    },
 };

@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,74 +46,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connect = void 0;
+exports.tokens = void 0;
 var apollo_server_1 = require("apollo-server");
-var typedefs_1 = __importDefault(require("./typedefs"));
-var resolvers_1 = __importDefault(require("./resolvers"));
-var db_1 = require("../db");
-var models_1 = require("../db/models");
-var server = new apollo_server_1.ApolloServer({
-    typeDefs: typedefs_1.default,
-    resolvers: resolvers_1.default,
-    cors: true
-});
-var syncTables = function (val) { return __awaiter(void 0, void 0, void 0, function () {
-    var e_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                if (!val) return [3 /*break*/, 5];
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 4, , 5]);
-                return [4 /*yield*/, models_1.userMdl.sync({ alter: true })];
-            case 2:
-                _a.sent();
-                return [4 /*yield*/, models_1.tokenMdl.sync({ alter: true })];
-            case 3:
-                _a.sent();
-                return [3 /*break*/, 5];
-            case 4:
-                e_1 = _a.sent();
-                throw new Error(e_1.message);
-            case 5: return [2 /*return*/];
-        }
-    });
-}); };
-var connect = function (showDefs) {
-    if (showDefs === void 0) { showDefs = false; }
-    return __awaiter(void 0, void 0, void 0, function () {
-        var serv, er_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 4, , 5]);
-                    if (showDefs) {
-                        console.log(resolvers_1.default);
-                    }
-                    return [4 /*yield*/, db_1.db.authenticate()];
-                case 1:
-                    _a.sent();
-                    console.log('Database connected successfully');
-                    return [4 /*yield*/, syncTables(false)];
-                case 2:
-                    _a.sent();
-                    return [4 /*yield*/, server.listen()];
-                case 3:
-                    serv = _a.sent();
-                    console.log("serv is running at " + serv.url);
-                    return [3 /*break*/, 5];
-                case 4:
-                    er_1 = _a.sent();
-                    console.log(er_1);
-                    return [3 /*break*/, 5];
-                case 5: return [2 /*return*/];
+var models_1 = require("../../db/models");
+exports.tokens = {
+    Mutation: {
+        createToken: function (_, args) { return __awaiter(void 0, void 0, void 0, function () {
+            var user, id, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 3, , 4]);
+                        return [4 /*yield*/, models_1.userMdl.findByPk(args.userId)];
+                    case 1:
+                        user = _a.sent();
+                        if (!user)
+                            throw new apollo_server_1.UserInputError('Invalid userid');
+                        return [4 /*yield*/, models_1.tokenMdl.create(__assign({}, args))];
+                    case 2:
+                        id = (_a.sent()).id;
+                        return [2 /*return*/, { userId: user, id: id, token: args.token }];
+                    case 3:
+                        error_1 = _a.sent();
+                        throw new apollo_server_1.UserInputError(error_1.message, error_1);
+                    case 4: return [2 /*return*/];
+                }
+            });
+        }); }
+    },
+    Others: {
+        Token: {
+            userId: function (_a) {
+                var userId = _a.userId;
+                return models_1.userMdl.findByPk(userId.id);
             }
-        });
-    });
+        }
+    }
 };
-exports.connect = connect;

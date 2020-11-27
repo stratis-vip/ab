@@ -6,10 +6,18 @@ export default gql`
     
     type Query{
         hi:String!
+        getUsers:[User]!
     }
-
+    
+    type Token {
+        id:ID!
+        userId:User!
+        token:String!
+    }
+    
     type Mutation{
         createUser(newUser:inUser!):User!
+        createToken(userId:ID!, token:String!):Token!
         hiq:String!
     }
     enum Role{

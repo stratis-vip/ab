@@ -21,8 +21,11 @@ const syncTables = async (val:boolean) =>{
   }
 }
 
-export const connect = async () =>{
+export const connect = async (showDefs:boolean=false) =>{
   try {
+    if (showDefs){
+      console.log( resolvers)
+    }
     await db.authenticate()
     console.log('Database connected successfully')
     await syncTables(false)

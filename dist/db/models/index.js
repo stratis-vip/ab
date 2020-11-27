@@ -41,6 +41,7 @@ exports.tokenMdl = index_1.db.define('token', {
         allowNull: false
     },
 }, {
+    indexes: [{ unique: true, fields: ['userId'] }],
     charset: 'utf8'
 });
 exports.userMdl.hasOne(exports.tokenMdl);

@@ -1,3 +1,3 @@
 import {connect} from './graphql/server'
 
-connect()
+connect(true)

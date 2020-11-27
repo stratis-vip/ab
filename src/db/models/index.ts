@@ -1,46 +1,46 @@
 import {db} from '../index'
 import {DataTypes} from "sequelize";
-import {v4 as uuid} from 'uuid'
 
-export const userMdl = db.define('user',{
-  id:{
-    type:DataTypes.UUID,
-    primaryKey:true,
+export const userMdl = db.define('user', {
+  id: {
+    type: DataTypes.UUID,
+    primaryKey: true,
     defaultValue: DataTypes.UUIDV4
   },
-  name:{
-    type:DataTypes.STRING(50),
-    allowNull:false
+  name: {
+    type: DataTypes.STRING(50),
+    allowNull: false
   },
-  email:{
+  email: {
     type: DataTypes.STRING(100),
     allowNull: false,
     unique: true
   },
-  password:{
+  password: {
     type: DataTypes.STRING(200),
     allowNull: false,
   },
-  role:{
+  role: {
     type: DataTypes.TINYINT.UNSIGNED,
     allowNull: false,
     defaultValue: 0
   },
-},{
+}, {
   charset: 'utf8'
 })
 
-export const tokenMdl = db.define('token',{
-  id:{
-    type:DataTypes.UUID,
-    primaryKey:true,
+export const tokenMdl = db.define('token', {
+  id: {
+    type: DataTypes.UUID,
+    primaryKey: true,
     defaultValue: DataTypes.UUIDV4
   },
-  token:{
-    type:DataTypes.STRING(50),
-    allowNull:false
+  token: {
+    type: DataTypes.STRING(50),
+    allowNull: false
   },
-},{
+}, {
+  indexes: [{unique: true, fields: ['userId']}],
   charset: 'utf8'
 })
 
