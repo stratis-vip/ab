@@ -30,3 +30,19 @@ export const userMdl = db.define('user',{
   charset: 'utf8'
 })
 
+export const tokenMdl = db.define('token',{
+  id:{
+    type:DataTypes.UUID,
+    primaryKey:true,
+    defaultValue: DataTypes.UUIDV4
+  },
+  token:{
+    type:DataTypes.STRING(50),
+    allowNull:false
+  },
+},{
+  charset: 'utf8'
+})
+
+userMdl.hasOne(tokenMdl)
+tokenMdl.belongsTo(userMdl)

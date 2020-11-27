@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userMdl = void 0;
+exports.tokenMdl = exports.userMdl = void 0;
 var index_1 = require("../index");
 var sequelize_1 = require("sequelize");
 exports.userMdl = index_1.db.define('user', {
@@ -30,3 +30,18 @@ exports.userMdl = index_1.db.define('user', {
 }, {
     charset: 'utf8'
 });
+exports.tokenMdl = index_1.db.define('token', {
+    id: {
+        type: sequelize_1.DataTypes.UUID,
+        primaryKey: true,
+        defaultValue: sequelize_1.DataTypes.UUIDV4
+    },
+    token: {
+        type: sequelize_1.DataTypes.STRING(50),
+        allowNull: false
+    },
+}, {
+    charset: 'utf8'
+});
+exports.userMdl.hasOne(exports.tokenMdl);
+exports.tokenMdl.belongsTo(exports.userMdl);

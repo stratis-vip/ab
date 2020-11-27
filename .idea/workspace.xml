@@ -23,40 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57e2e36-85ce-40f6-b0f6-28131dbfbd83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.graphqlconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codegen.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/graphql/resolvers/scalars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql.schema.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/resolvers/scalars.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/resolvers/users.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/strings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/db/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/models/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/graphql/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/typedefs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/typedefs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/buildSchemaFromSDL.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/snapshotSerializers/astSerializer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/snapshotSerializers/graphQLTypeSerializer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/snapshotSerializers/selectionSetSerializer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-graphql/src/schema/__tests__/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/moment/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/moment/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/strings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/strings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphql/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/typedefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/typedefs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +104,7 @@
       <updated>1606403015252</updated>
       <workItem from="1606403016739" duration="7326000" />
       <workItem from="1606444044983" duration="3910000" />
-      <workItem from="1606454135903" duration="4529000" />
+      <workItem from="1606454135903" duration="4890000" />
     </task>
     <task id="LOCAL-00001" summary="first attemp">
       <created>1606409403422</created>
@@ -183,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606449364831</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="createUser works">
+      <created>1606459434500</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606459434500</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +193,8 @@
     <MESSAGE value="first attemp" />
     <MESSAGE value="all" />
     <MESSAGE value="node" />
-    <option name="LAST_COMMIT_MESSAGE" value="node" />
+    <MESSAGE value="createUser works" />
+    <option name="LAST_COMMIT_MESSAGE" value="createUser works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="367" y="127" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606403848844">
@@ -253,10 +233,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606403225698" />
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606449367029">
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606459437843">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606449367029" />
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606459437843" />
     <state x="568" y="224" width="670" height="676" key="search.everywhere.popup" timestamp="1606449060027">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
