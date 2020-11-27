@@ -29,3 +29,4 @@ export const userMdl = db.define('user',{
 },{
   charset: 'utf8'
 })
+

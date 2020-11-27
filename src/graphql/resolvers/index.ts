@@ -1,10 +1,13 @@
 import {strings} from './strings'
+import {scalars} from "./scalars";
+import {users} from '../../graphql/resolvers/users'
 
 export default {
   Query:{
-    ...strings.Query
+    ...strings.Query,
   },
   Mutation:{
-    ...strings.Mutation
+    ...users.Mutation
   },
+  ...scalars
 }

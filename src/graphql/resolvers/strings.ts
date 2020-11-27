@@ -1,8 +1,11 @@
 export const strings ={
   Query: {
-    hi: ()=> "hi!"
+    hi: ()=> {
+      console.log('returnsfsdf')
+      return "hi!"
+    }
   },
   Mutation:{
-    hiq: ()=>"hiq"
+    hiq: ()=> 'ere'
   }
 }

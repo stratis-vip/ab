@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,35 +46,28 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connect = void 0;
+exports.users = void 0;
 var apollo_server_1 = require("apollo-server");
-var typedefs_1 = __importDefault(require("./graphql/typedefs"));
-var resolvers_1 = __importDefault(require("./graphql/resolvers"));
-var server = new apollo_server_1.ApolloServer({
-    typeDefs: typedefs_1.default,
-    resolvers: resolvers_1.default
-});
-var connect = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var serv, er_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, server.listen()];
-            case 1:
-                serv = _a.sent();
-                console.log("serv is running at " + serv.url);
-                return [3 /*break*/, 3];
-            case 2:
-                er_1 = _a.sent();
-                console.log(er_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); };
-exports.connect = connect;
+var models_1 = require("../../db/models");
+exports.users = {
+    Mutation: {
+        createUser: function (_, args) { return __awaiter(void 0, void 0, void 0, function () {
+            var user, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, models_1.userMdl.create(__assign({}, args.newUser))];
+                    case 1:
+                        user = _a.sent();
+                        return [2 /*return*/, user];
+                    case 2:
+                        error_1 = _a.sent();
+                        throw new apollo_server_1.UserInputError(error_1.message, error_1);
+                    case 3: return [2 /*return*/];
+                }
+            });
+        }); }
+    }
+};

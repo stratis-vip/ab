@@ -44,7 +44,6 @@ var apollo_server_1 = require("apollo-server");
 var typedefs_1 = __importDefault(require("./typedefs"));
 var resolvers_1 = __importDefault(require("./resolvers"));
 var db_1 = require("../db");
-var models_1 = require("../db/models");
 var server = new apollo_server_1.ApolloServer({
     typeDefs: typedefs_1.default,
     resolvers: resolvers_1.default,
@@ -55,24 +54,21 @@ var connect = function () { return __awaiter(void 0, void 0, void 0, function ()
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                _a.trys.push([0, 4, , 5]);
+                _a.trys.push([0, 3, , 4]);
                 return [4 /*yield*/, db_1.db.authenticate()];
             case 1:
                 _a.sent();
                 console.log('Database connected successfully');
-                return [4 /*yield*/, models_1.userMdl.sync({ alter: true })];
-            case 2:
-                _a.sent();
                 return [4 /*yield*/, server.listen()];
-            case 3:
+            case 2:
                 serv = _a.sent();
                 console.log("serv is running at " + serv.url);
-                return [3 /*break*/, 5];
-            case 4:
+                return [3 /*break*/, 4];
+            case 3:
                 er_1 = _a.sent();
                 console.log(er_1);
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
         }
     });
 }); };
