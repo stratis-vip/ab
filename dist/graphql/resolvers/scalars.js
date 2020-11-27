@@ -25,6 +25,7 @@ exports.scalars = {
         parseValue: function (value) {
             return value;
         },
+        parseLiteral: function (value) { return value; },
         serialize: (function (value) {
             if (moment_1.default(value, "YYYY-MM-DD").isValid())
                 return value;
@@ -36,6 +37,7 @@ exports.scalars = {
         name: 'Date',
         description: 'Τύπος ημερομηνίας που κρατά την ημερομηνία σε μορφή YYYY-MM-DD HH:MM:SS',
         parseValue: function (value) { return new Date(value); },
+        parseLiteral: function (value) { return value; },
         serialize: function (value) { return new Date(value); }
     }),
     Role: {

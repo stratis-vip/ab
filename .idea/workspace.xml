@@ -22,25 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f57e2e36-85ce-40f6-b0f6-28131dbfbd83" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/db/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/tokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/tokens.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/graphql/typedefs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/typedefs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/graphql.schema.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/tokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/tokens.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/typedefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/typedefs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
-    </list>
+    <list default="true" id="f57e2e36-85ce-40f6-b0f6-28131dbfbd83" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +101,7 @@
       <updated>1606403015252</updated>
       <workItem from="1606403016739" duration="7326000" />
       <workItem from="1606444044983" duration="3910000" />
-      <workItem from="1606454135903" duration="14933000" />
+      <workItem from="1606454135903" duration="15206000" />
     </task>
     <task id="LOCAL-00001" summary="first attemp">
       <created>1606409403422</created>
@@ -191,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606472758519</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="create tokenTable complete">
+      <created>1606486000353</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606486000353</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +199,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first attemp" />
     <MESSAGE value="all" />
@@ -260,10 +250,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606474357143" />
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606472762705">
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606486002539">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606472762705" />
+    <state x="503" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1606486002539" />
     <state x="664" y="206" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606470185603">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

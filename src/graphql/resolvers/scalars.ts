@@ -21,6 +21,7 @@ export const scalars = {
     parseValue: (value) => {
       return value
     },
+    parseLiteral: (value)=>value,
     serialize: (value => {
       if (moment(value, "YYYY-MM-DD").isValid())
         return value
@@ -32,6 +33,7 @@ export const scalars = {
     name: 'Date',
     description: 'Τύπος ημερομηνίας που κρατά την ημερομηνία σε μορφή YYYY-MM-DD HH:MM:SS',
     parseValue: value => new Date(value),
+    parseLiteral: value => value,
     serialize: value => new Date(value)
   }),
   Role: {
