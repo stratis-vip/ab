@@ -1,0 +1,31 @@
+import {db} from '../index'
+import {DataTypes} from "sequelize";
+import {v4 as uuid} from 'uuid'
+
+export const userMdl = db.define('user',{
+  id:{
+    type:DataTypes.UUID,
+    primaryKey:true,
+    defaultValue: DataTypes.UUIDV4
+  },
+  name:{
+    type:DataTypes.STRING(50),
+    allowNull:false
+  },
+  email:{
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    unique: true
+  },
+  password:{
+    type: DataTypes.STRING(200),
+    allowNull: false,
+  },
+  role:{
+    type: DataTypes.TINYINT.UNSIGNED,
+    allowNull: false,
+    defaultValue: 0
+  },
+},{
+  charset: 'utf8'
+})

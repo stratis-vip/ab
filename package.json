@@ -19,11 +19,16 @@
   },
   "homepage": "https://github.com/stratis-vip/ab#readme",
   "devDependencies": {
+    "@types/uuid": "^8.3.0",
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.6",
     "typescript": "^4.1.2"
   },
   "dependencies": {
     "apollo-server": "^2.19.0",
-    "graphql": "^15.4.0"
+    "graphql": "^15.4.0",
+    "mariadb": "^2.5.1",
+    "sequelize": "^6.3.5",
+    "uuid": "^8.3.1"
   }
 }
