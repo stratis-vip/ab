@@ -1,17 +1,15 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
     };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -52,43 +50,59 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.tokens = void 0;
 var apollo_server_1 = require("apollo-server");
 var models_1 = require("../../db/models");
-var sequelize_1 = require("sequelize");
-var TokenMdl = /** @class */ (function (_super) {
-    __extends(TokenMdl, _super);
-    function TokenMdl() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return TokenMdl;
-}(sequelize_1.Model));
 exports.tokens = {
     Mutation: {
         createToken: function (_, args) { return __awaiter(void 0, void 0, void 0, function () {
-            var userId, token, tok, userFromDb, dbToken, error_1;
+            var errors, userId, token, appId, userFromDb, appFromDb, tok, retVal, dbToken, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 7, , 8]);
-                        userId = args.user, token = args.token;
-                        return [4 /*yield*/, models_1.tokenMdl.findOne({ where: { userId: userId } })];
+                        errors = {};
+                        _a.label = 1;
                     case 1:
-                        tok = _a.sent();
-                        return [4 /*yield*/, models_1.userMdl.findOne({ where: { id: userId } })];
+                        _a.trys.push([1, 13, , 14]);
+                        userId = args.user, token = args.token, appId = args.app;
+                        return [4 /*yield*/, models_1.userMdl.findByPk(userId)];
                     case 2:
                         userFromDb = _a.sent();
-                        if (!tok) return [3 /*break*/, 4];
-                        return [4 /*yield*/, models_1.tokenMdl.update({ userId: userId, token: token }, { where: { id: tok.id } })];
+                        if (!userFromDb) return [3 /*break*/, 11];
+                        return [4 /*yield*/, models_1.appMdl.findByPk(appId)];
                     case 3:
-                        _a.sent();
-                        return [2 /*return*/, { id: tok.id, user: userFromDb, token: token }];
-                    case 4: return [4 /*yield*/, models_1.tokenMdl.create({ userId: userId, token: token })];
+                        appFromDb = _a.sent();
+                        if (!appFromDb) return [3 /*break*/, 9];
+                        return [4 /*yield*/, models_1.tokenMdl.findOne({ where: { userId: userId, appId: appId } })];
+                    case 4:
+                        tok = _a.sent();
+                        retVal = {};
+                        if (!tok) return [3 /*break*/, 6];
+                        return [4 /*yield*/, models_1.tokenMdl.update({ userId: userId, token: token }, { where: { id: tok.id } })];
                     case 5:
-                        dbToken = _a.sent();
-                        return [2 /*return*/, { id: dbToken.id, user: userFromDb, token: dbToken.token }];
-                    case 6: return [3 /*break*/, 8];
+                        _a.sent();
+                        retVal = { id: tok.id, user: userFromDb, token: token, app: appFromDb };
+                        return [3 /*break*/, 8];
+                    case 6: return [4 /*yield*/, models_1.tokenMdl.create({ userId: userId, appId: appId, token: token })];
                     case 7:
+                        dbToken = _a.sent();
+                        if (dbToken) {
+                            retVal = { id: dbToken.id, user: userFromDb, token: dbToken.token, app: appFromDb };
+                        }
+                        else {
+                            errors.token = 'Token not exists';
+                        }
+                        _a.label = 8;
+                    case 8: return [2 /*return*/, retVal];
+                    case 9:
+                        errors.user = 'User not exists';
+                        _a.label = 10;
+                    case 10: return [3 /*break*/, 12];
+                    case 11:
+                        errors.app = 'App not exists';
+                        _a.label = 12;
+                    case 12: throw new apollo_server_1.UserInputError('Error', errors);
+                    case 13:
                         error_1 = _a.sent();
-                        throw new apollo_server_1.UserInputError(error_1.message, error_1);
-                    case 8: return [2 /*return*/];
+                        throw new apollo_server_1.UserInputError('Token Errors', __assign(__assign({}, errors), { general: error_1.message }));
+                    case 14: return [2 /*return*/];
                 }
             });
         }); }
@@ -96,12 +110,42 @@ exports.tokens = {
     Others: {
         Token: {
             user: function (parent) { return __awaiter(void 0, void 0, void 0, function () {
+                var retVal, error_2;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            console.log('USER', parent.user.id);
+                            _a.trys.push([0, 2, , 3]);
                             return [4 /*yield*/, models_1.userMdl.findByPk(parent.user.id)];
-                        case 1: return [2 /*return*/, _a.sent()];
+                        case 1:
+                            retVal = _a.sent();
+                            if (retVal) {
+                                return [2 /*return*/, retVal];
+                            }
+                            throw new apollo_server_1.ApolloError('User not exists');
+                        case 2:
+                            error_2 = _a.sent();
+                            throw new apollo_server_1.ApolloError(error_2.message);
+                        case 3: return [2 /*return*/];
+                    }
+                });
+            }); },
+            app: function (parent) { return __awaiter(void 0, void 0, void 0, function () {
+                var retVal, error_3;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            _a.trys.push([0, 2, , 3]);
+                            return [4 /*yield*/, models_1.appMdl.findByPk(parent.app.id)];
+                        case 1:
+                            retVal = _a.sent();
+                            if (retVal) {
+                                return [2 /*return*/, retVal];
+                            }
+                            throw new apollo_server_1.ApolloError('Application not exists');
+                        case 2:
+                            error_3 = _a.sent();
+                            throw new apollo_server_1.ApolloError(error_3.message);
+                        case 3: return [2 /*return*/];
                     }
                 });
             }); }

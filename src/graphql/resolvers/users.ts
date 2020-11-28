@@ -1,17 +1,23 @@
-import {InUser, Token} from '../../types'
-import {UserInputError} from 'apollo-server'
+import {InUser} from '../../types'
+import {ApolloError, UserInputError} from 'apollo-server'
 import {userMdl} from "../../db/models";
+import {UserModel} from '.'
+import  crypt from 'bcrypt'
 
-export const users ={
-  Query:{
-    getUsers: () =>  userMdl.findAll()
+export const users = {
+  Query: {
+    getUsers: () => userMdl.findAll()
   },
-  Mutation:{
-    createUser: async (_:any, args:{newUser:InUser} )=> {
+  Mutation: {
+    createUser: async (_: any, args: { newUser: InUser }): Promise<UserModel> => {
       try {
-        const user = await userMdl.create({...args.newUser})
-        return user
-      }catch (error){
+        args.newUser.password = await crypt.hash(args.newUser.password,12)
+        const user: UserModel | null = await userMdl.create({...args.newUser})
+        if (user) {
+          return user
+        }
+        throw new ApolloError('Cant Create user')
+      } catch (error) {
         throw new UserInputError(error.message, error)
       }
     }

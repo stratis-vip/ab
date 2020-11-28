@@ -46,29 +46,40 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.users = void 0;
 var apollo_server_1 = require("apollo-server");
 var models_1 = require("../../db/models");
+var bcrypt_1 = __importDefault(require("bcrypt"));
 exports.users = {
     Query: {
         getUsers: function () { return models_1.userMdl.findAll(); }
     },
     Mutation: {
         createUser: function (_, args) { return __awaiter(void 0, void 0, void 0, function () {
-            var user, error_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var _a, user, error_1;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, models_1.userMdl.create(__assign({}, args.newUser))];
+                        _b.trys.push([0, 3, , 4]);
+                        _a = args.newUser;
+                        return [4 /*yield*/, bcrypt_1.default.hash(args.newUser.password, 12)];
                     case 1:
-                        user = _a.sent();
-                        return [2 /*return*/, user];
+                        _a.password = _b.sent();
+                        return [4 /*yield*/, models_1.userMdl.create(__assign({}, args.newUser))];
                     case 2:
-                        error_1 = _a.sent();
+                        user = _b.sent();
+                        if (user) {
+                            return [2 /*return*/, user];
+                        }
+                        throw new apollo_server_1.ApolloError('Cant Create user');
+                    case 3:
+                        error_1 = _b.sent();
                         throw new apollo_server_1.UserInputError(error_1.message, error_1);
-                    case 3: return [2 /*return*/];
+                    case 4: return [2 /*return*/];
                 }
             });
         }); }

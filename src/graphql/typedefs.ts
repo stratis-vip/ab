@@ -12,12 +12,13 @@ export default gql`
     type Token {
         id:ID!
         user:User!
+        app:App!
         token:String!
     }
     
     type Mutation{
         createUser(newUser:inUser!):User!
-        createToken(user:ID!, token:String!):Token!
+        createToken(user:ID!, app:ID!, token:String!):Token!
         hiq:String!
     }
     enum Role{
@@ -38,5 +39,11 @@ export default gql`
         email:String!
         password:String!
         role: Role!
+    }
+    
+    type App {
+        id:ID!
+        name:String!
+        description:String!
     }
 `

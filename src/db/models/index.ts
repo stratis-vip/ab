@@ -29,6 +29,25 @@ export const userMdl = db.define('user', {
   charset: 'utf8'
 })
 
+export const appMdl = db.define('app', {
+  id: {
+    type: DataTypes.UUID,
+    primaryKey: true,
+    defaultValue: DataTypes.UUIDV4
+  },
+  name: {
+    type: DataTypes.STRING(50),
+    allowNull: false
+  },
+  description: {
+    type: DataTypes.STRING(200),
+    allowNull: false
+  },
+}, {
+  charset: 'utf8'
+})
+
+
 export const tokenMdl = db.define('token', {
   id: {
     type: DataTypes.UUID,
@@ -40,11 +59,11 @@ export const tokenMdl = db.define('token', {
     allowNull: false
   },
 }, {
-  indexes: [{unique: true, fields: ['userId']}],
+  indexes: [{name:'app_user',unique: true, fields: ['userId', 'appId']}],
   charset: 'utf8'
 })
 
-userMdl.hasOne(tokenMdl,{
+userMdl.hasMany(tokenMdl,{
   foreignKey: {
     allowNull: false
   }
@@ -54,3 +73,14 @@ tokenMdl.belongsTo(userMdl,{
     allowNull:false
   }
 })
+appMdl.hasMany(tokenMdl,{
+  foreignKey:{
+    allowNull:false
+  }
+})
+tokenMdl.belongsTo(appMdl,{
+  foreignKey:{
+    allowNull:false
+  }
+})
+

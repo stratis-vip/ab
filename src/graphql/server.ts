@@ -2,7 +2,7 @@ import {ApolloServer} from 'apollo-server'
 import typeDefs from './typedefs'
 import resolvers from './resolvers'
 import {db} from "../db";
-import {tokenMdl, userMdl} from "../db/models";
+import {appMdl, tokenMdl, userMdl} from "../db/models";
 
 const server = new ApolloServer({
   typeDefs,
@@ -13,8 +13,10 @@ const server = new ApolloServer({
 const syncTables = async (val:boolean) =>{
   if (val){
     try {
-      await userMdl.sync({alter: true})
-      await tokenMdl.sync({alter: true})
+      await userMdl.sync({force: true})
+      await appMdl.sync({force:true})
+      await tokenMdl.sync({force: true})
+
     }catch (e){
       throw new Error(e.message)
     }
@@ -29,6 +31,7 @@ export const connect = async (showDefs:boolean=false) =>{
     await db.authenticate()
     console.log('Database connected successfully')
     await syncTables(false)
+    // await syncTables(true)
     const serv = await server.listen()
     console.log(`serv is running at ${serv.url}`)
   }catch (er){

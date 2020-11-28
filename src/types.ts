@@ -32,6 +32,7 @@ export type Token = {
   __typename?: 'Token';
   id: Scalars['ID'];
   user: User;
+  app: App;
   token: Scalars['String'];
 };
 
@@ -49,7 +50,8 @@ export type MutationCreateUserArgs = {
 
 
 export type MutationCreateTokenArgs = {
-  userId: Scalars['ID'];
+  user: Scalars['ID'];
+  app: Scalars['ID'];
   token: Scalars['String'];
 };
 
@@ -73,6 +75,13 @@ export type User = {
   email: Scalars['String'];
   password: Scalars['String'];
   role: Role;
+};
+
+export type App = {
+  __typename?: 'App';
+  id: Scalars['ID'];
+  name: Scalars['String'];
+  description: Scalars['String'];
 };
 
 export enum CacheControlScope {
@@ -169,6 +178,7 @@ export type ResolversTypes = {
   Role: Role;
   inUser: InUser;
   User: ResolverTypeWrapper<User>;
+  App: ResolverTypeWrapper<App>;
   CacheControlScope: CacheControlScope;
   Upload: ResolverTypeWrapper<Scalars['Upload']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
@@ -185,6 +195,7 @@ export type ResolversParentTypes = {
   Mutation: {};
   inUser: InUser;
   User: User;
+  App: App;
   Upload: Scalars['Upload'];
   Boolean: Scalars['Boolean'];
 };
@@ -205,13 +216,14 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 export type TokenResolvers<ContextType = any, ParentType extends ResolversParentTypes['Token'] = ResolversParentTypes['Token']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+  app?: Resolver<ResolversTypes['App'], ParentType, ContextType>;
   token?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   createUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationCreateUserArgs, 'newUser'>>;
-  createToken?: Resolver<ResolversTypes['Token'], ParentType, ContextType, RequireFields<MutationCreateTokenArgs, 'userId' | 'token'>>;
+  createToken?: Resolver<ResolversTypes['Token'], ParentType, ContextType, RequireFields<MutationCreateTokenArgs, 'user' | 'app' | 'token'>>;
   hiq?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 };
 
@@ -221,6 +233,13 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   password?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   role?: Resolver<ResolversTypes['Role'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type AppResolvers<ContextType = any, ParentType extends ResolversParentTypes['App'] = ResolversParentTypes['App']> = {
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -235,6 +254,7 @@ export type Resolvers<ContextType = any> = {
   Token?: TokenResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
+  App?: AppResolvers<ContextType>;
   Upload?: GraphQLScalarType;
 };
 

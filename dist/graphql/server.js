@@ -55,25 +55,28 @@ var syncTables = function (val) { return __awaiter(void 0, void 0, void 0, funct
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                if (!val) return [3 /*break*/, 5];
+                if (!val) return [3 /*break*/, 6];
                 _a.label = 1;
             case 1:
-                _a.trys.push([1, 4, , 5]);
-                return [4 /*yield*/, models_1.userMdl.sync({ alter: true })];
+                _a.trys.push([1, 5, , 6]);
+                return [4 /*yield*/, models_1.userMdl.sync({ force: true })];
             case 2:
                 _a.sent();
-                return [4 /*yield*/, models_1.tokenMdl.sync({ alter: true })];
+                return [4 /*yield*/, models_1.appMdl.sync({ force: true })];
             case 3:
                 _a.sent();
-                return [3 /*break*/, 5];
+                return [4 /*yield*/, models_1.tokenMdl.sync({ force: true })];
             case 4:
+                _a.sent();
+                return [3 /*break*/, 6];
+            case 5:
                 e_1 = _a.sent();
                 throw new Error(e_1.message);
-            case 5: return [2 /*return*/];
+            case 6: return [2 /*return*/];
         }
     });
 }); };
-var connect = function (showDefs) {
+exports.connect = function (showDefs) {
     if (showDefs === void 0) { showDefs = false; }
     return __awaiter(void 0, void 0, void 0, function () {
         var serv, er_1;
@@ -88,7 +91,9 @@ var connect = function (showDefs) {
                 case 1:
                     _a.sent();
                     console.log('Database connected successfully');
-                    return [4 /*yield*/, syncTables(false)];
+                    return [4 /*yield*/, syncTables(false)
+                        // await syncTables(true)
+                    ];
                 case 2:
                     _a.sent();
                     return [4 /*yield*/, server.listen()];
@@ -105,4 +110,3 @@ var connect = function (showDefs) {
         });
     });
 };
-exports.connect = connect;

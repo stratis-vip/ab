@@ -24,9 +24,22 @@
   <component name="ChangeListManager">
     <list default="true" id="f57e2e36-85ce-40f6-b0f6-28131dbfbd83" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/graphql/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/graphql/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/db/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/db/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/tokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/tokens.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/graphql/resolvers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/resolvers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/graphql/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/graphql/typedefs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/graphql/typedefs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/graphql.schema.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/tokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/tokens.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/resolvers/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/resolvers/users.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/typedefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/typedefs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +81,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -106,7 +119,7 @@
       <updated>1606403015252</updated>
       <workItem from="1606403016739" duration="7326000" />
       <workItem from="1606444044983" duration="3910000" />
-      <workItem from="1606454135903" duration="15891000" />
+      <workItem from="1606454135903" duration="21228000" />
     </task>
     <task id="LOCAL-00001" summary="first attemp">
       <created>1606409403422</created>
@@ -238,30 +251,30 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="691" y="227" key="FileChooserDialogImpl/0.23.1440.877@0.23.1440.877" timestamp="1606478055424" />
-    <state width="1051" height="201" key="GridCell.Tab.0.bottom" timestamp="1606487174336">
+    <state width="1051" height="201" key="GridCell.Tab.0.bottom" timestamp="1606487574319">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1051" height="201" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1606487174336" />
-    <state width="1051" height="201" key="GridCell.Tab.0.center" timestamp="1606487174335">
+    <state width="1051" height="201" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1606487574319" />
+    <state width="1051" height="201" key="GridCell.Tab.0.center" timestamp="1606487574318">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1051" height="201" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1606487174335" />
-    <state width="1051" height="201" key="GridCell.Tab.0.left" timestamp="1606487174331">
+    <state width="1051" height="201" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1606487574318" />
+    <state width="1051" height="201" key="GridCell.Tab.0.left" timestamp="1606487574317">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1051" height="201" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1606487174331" />
-    <state width="1051" height="201" key="GridCell.Tab.0.right" timestamp="1606487174336">
+    <state width="1051" height="201" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1606487574317" />
+    <state width="1051" height="201" key="GridCell.Tab.0.right" timestamp="1606487574318">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1051" height="201" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1606487174336" />
+    <state width="1051" height="201" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1606487574318" />
     <state x="404" y="104" key="SettingsEditor" timestamp="1606458592617">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="404" y="104" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1606458592617" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1606474357143">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1606499615507">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606474357143" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1606499615507" />
     <state x="503" y="205" key="Vcs.Push.Dialog.v2" timestamp="1606486809826">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
